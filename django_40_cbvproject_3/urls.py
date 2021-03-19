@@ -19,9 +19,10 @@ from testapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.CompanyListView.as_view()),
+    path('', views.CompanyListView.as_view(), name='companies'),
     path('<int:pk>/', views.CompanyDetailView.as_view(), name='detail'),
     path('create/', views.CompanyCreateView.as_view()),
-    path('update/<int:pk>', views.CompanyUpdateView.as_view())
+    path('update/<int:pk>/', views.CompanyUpdateView.as_view()),
+    path('delete/<int:pk>/', views.CompanyDeleteView.as_view())
 
 ]
